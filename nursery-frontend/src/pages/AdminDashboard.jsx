@@ -63,8 +63,8 @@ export default function AdminDashboard() {
     try {
       setUploading(true);
       const { data } = await API.post('/upload', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
-      setProductForm(p => ({ ...p, image: `http://localhost:5000${data.imageUrl}` }));
-      setImagePreview(`http://localhost:5000${data.imageUrl}`);
+      setProductForm(p => ({ ...p, image: `https://flora-nursery.onrender.com/${data.imageUrl}` }));
+      setImagePreview(`https://flora-nursery.onrender.com/${data.imageUrl}`);
       toast.success('Image uploaded!');
     } catch { toast.error('Image upload failed'); }
     finally { setUploading(false); }
